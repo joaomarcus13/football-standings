@@ -48,12 +48,15 @@ export default class AppController {
   }
 
   async generateTable() {
-    const { table, currentMatchday } = await this.apiManager.getStandings(
-      this.league.id
-    );
-    this.table = table;
-    this.currentMatchday = currentMatchday;
-    this.viewManager.generateTable(table);
+    const data = await this.apiManager.getStandings(this.league.id);
+    if (!data) {
+      this.viewManager.error('table');
+      return;
+    }
+
+    this.table = data.table;
+    this.currentMatchday = data.currentMatchday;
+    this.viewManager.generateTable(data.table);
   }
 
   async generateMatchesList() {
@@ -61,6 +64,10 @@ export default class AppController {
       this.league.id,
       this.currentMatchday
     );
+    if (!allMatches) {
+      this.viewManager.error('matches');
+      return;
+    }
     const matches = [...Array(39)].map((_) => []);
     allMatches.forEach((match) => {
       matches[match.matchday].push(match);

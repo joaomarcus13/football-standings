@@ -1,6 +1,6 @@
 import { getTable } from './templates/table.js';
 import { getMatch } from './templates/match.js';
-import { getLoading } from './templates/loading.js';
+import { getLoading, getError } from './templates/status.js';
 
 export default class ViewManager {
   constructor() {
@@ -39,13 +39,11 @@ export default class ViewManager {
 
   configureNavMatchday(changeMatchday) {
     this.prevMatch.addEventListener('click', () => {
-   
       changeMatchday((currentMatchday) => {
         if (currentMatchday > 0) return currentMatchday - 1;
       });
     });
     this.nextMatch.onclick = () => {
-  
       changeMatchday((currentMatchday) => {
         if (currentMatchday < 38) return currentMatchday + 1;
       });
@@ -62,6 +60,10 @@ export default class ViewManager {
       item.team.name = cleanTeamName(item.team.name);
       item.performance = getPointsPerformance(item.points, item.playedGames);
     });
+  }
+
+  error(attr) {
+    this[attr].innerHTML = getError();
   }
 
   generateHeader(league) {
@@ -86,7 +88,7 @@ export default class ViewManager {
       const {
         team: { crestUrl },
       } = table.find((item) => item.team.id === id);
-    
+
       return crestUrl;
     };
     const getDate = (date) => this.dateTransform.format(new Date(date));

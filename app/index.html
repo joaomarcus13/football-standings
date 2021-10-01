@@ -33,14 +33,14 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <title>FootBall Standings</title>
   </head>
   <body>
     <header>
       <button id="btnSideNav" type="button"><i class="fa fa-bars"></i></button>
       <div id="leagueInfo">
         <img
-          src=""
+          src="https://upload.wikimedia.org/wikipedia/pt/thumb/4/42/Campeonato_Brasileiro_S%C3%A9rie_A_logo.png/250px-Campeonato_Brasileiro_S%C3%A9rie_A_logo.png"
           alt="leagueName"
         />
         <span>Brasileirão</span>
@@ -49,49 +49,37 @@
     <main>
       <div id="sideNav" class="sidenav">
         <li data-name="brazil">
-          
-
           <span>Campeonato <strong>Brasileiro</strong> </span>
         </li>
         <li data-name="england">
-         
-
           <span>Campeonato <strong>Inglês</strong> </span>
         </li>
         <li data-name="spain">
-         
           <span>Campeonato <strong>Espanhol</strong> </span>
         </li>
         <li data-name="germany">
-         
-
           <span>Campeonato <strong>Alemão</strong> </span>
         </li>
         <li data-name="france">
-         
           <span>Campeonato <strong>Francês</strong> </span>
         </li>
         <li data-name="italy">
-        
-
           <span>Campeonato <strong>Italiano</strong> </span>
         </li>
         <li data-name="portugal">
-         
-
           <span>Campeonato <strong>Português</strong> </span>
         </li>
         <li data-name="netherlands">
-         
-
           <span>Campeonato <strong>Holandês</strong> </span>
         </li>
       </div>
       <section>
         <div id="table" class="container">
-          <div class="loading">
-            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-            <span class="sr-only">Loading...</span>
+          <div class="status">
+            <div>
+              <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+              <span class="sr-only">Loading...</span>
+            </div>
           </div>
         </div>
       </section>
@@ -107,9 +95,11 @@
             </button>
           </div>
           <div id="matcheList">
-            <div class="loading">
-              <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-              <span class="sr-only">Loading...</span>
+            <div class="status">
+              <div>
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                <span class="sr-only">Loading...</span>
+              </div>
             </div>
           </div>
         </div>

@@ -16,7 +16,6 @@ export default class ApiManager {
   async getStandings(id) {
     try {
       const resp = await this.connection.get(`/competitions/${id}/standings`);
-
       return {
         currentMatchday: resp.data.season.currentMatchday,
         table: resp.data.standings[0].table,

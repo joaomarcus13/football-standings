@@ -2,14 +2,12 @@
 @import 'variables';
 @import 'mixins';
 
-
-
 header {
   @include flex(center, none);
   position: sticky;
   top: 0;
   height: 70px;
-  background: linear-gradient(65deg, white, $blueLight,$blueDark);
+  background: linear-gradient(65deg, white, $blueLight, $blueDark);
   z-index: 1;
   button {
     @include flex;
@@ -252,10 +250,15 @@ main {
   transition: all 0.3s linear;
 }
 
-.loading {
+.status {
   @include flex();
   width: 100%;
   height: calc(100vh - 90px);
+  div {
+    @include flex(center, space-between, column);
+    height: 70px;
+    width: 200px;
+  }
 }
 
 .active {
