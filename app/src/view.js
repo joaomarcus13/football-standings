@@ -38,14 +38,30 @@ export default class ViewManager {
   }
 
   configureNavMatchday(changeMatchday) {
-    this.prevMatch.addEventListener('click', () => {
+    const checkBtnColor = (btn) => btn.classList.add('disabled');
+    const removeDisabledBtn = (btn) => btn.classList.remove('disabled');
+
+    this.prevMatch.onclick = () => {
       changeMatchday((currentMatchday) => {
-        if (currentMatchday > 0) return currentMatchday - 1;
+        if (currentMatchday > 0) {
+          if (currentMatchday - 1 == 1) {
+            checkBtnColor(this.prevMatch.children[0]);
+          }
+          removeDisabledBtn(this.nextMatch.children[0]);
+          return currentMatchday - 1;
+        }
       });
-    });
+    };
+
     this.nextMatch.onclick = () => {
-      changeMatchday((currentMatchday) => {
-        if (currentMatchday < 38) return currentMatchday + 1;
+      changeMatchday((currentMatchday, length) => {
+        if (currentMatchday < length) {
+          if (currentMatchday + 1 == length) {
+            checkBtnColor(this.nextMatch.children[0]);
+          }
+          removeDisabledBtn(this.prevMatch.children[0]);
+          return currentMatchday + 1;
+        }
       });
     };
   }

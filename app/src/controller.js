@@ -6,7 +6,7 @@ export default class AppController {
     this.league = leagues['brazil'];
     this.currentMatchday = 1;
     this.table = [];
-    this.matches = null;
+    this.matches = [];
   }
 
   initialize() {
@@ -31,7 +31,9 @@ export default class AppController {
   }
 
   changeMatchday(matchday) {
-    this.currentMatchday = matchday(this.currentMatchday);
+    this.currentMatchday =
+      matchday(this.currentMatchday, this.numberOfMatches()) ||
+      this.currentMatchday;
     this.viewManager.generateMatchesList(
       this.getCurrentMatch(),
       this.currentMatchday,
@@ -59,6 +61,10 @@ export default class AppController {
     this.viewManager.generateTable(data.table);
   }
 
+  numberOfMatches() {
+    return this.table.length * 2 - 2;
+  }
+
   async generateMatchesList() {
     const allMatches = await this.apiManager.getMatches(
       this.league.id,
@@ -68,7 +74,7 @@ export default class AppController {
       this.viewManager.error('matches');
       return;
     }
-    const matches = [...Array(39)].map((_) => []);
+    const matches = [...Array(this.numberOfMatches() + 1)].map((_) => []);
     allMatches.forEach((match) => {
       matches[match.matchday].push(match);
     });

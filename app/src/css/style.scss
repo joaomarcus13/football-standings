@@ -185,7 +185,7 @@ main {
   top: 38px;
   left: 42px;
   border-radius: 4px;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
   transform: scale(0);
   transform-origin: left top;
   li {
@@ -247,7 +247,7 @@ main {
   transform: scale(1);
   // transform: translateX(0px);
   transform-origin: left top; //
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
 }
 
 .status {
@@ -263,4 +263,7 @@ main {
 
 .active {
   background-color: #a0a0a0;
+}
+.disabled {
+  color: #a0a0a0;
 }

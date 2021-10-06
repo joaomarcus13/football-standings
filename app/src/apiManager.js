@@ -1,4 +1,3 @@
-import { tableMock, matchMock } from '../src/config/mock.js';
 export default class ApiManager {
   constructor({ baseURL, headers }) {
     this.baseURL = baseURL;
@@ -23,8 +22,6 @@ export default class ApiManager {
     } catch (error) {
       return null;
     }
-
-    // return tableMock;
   }
 
   async getMatches(id) {
@@ -36,7 +33,4 @@ export default class ApiManager {
       return null;
     }
   }
-
-  // const matches = matchMock;
-  // return matches.matches;
 }
