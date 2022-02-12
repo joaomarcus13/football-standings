@@ -3,12 +3,14 @@ import path from 'path';
 
 const app = express();
 
+const port = process.env.PORT || 3333;
+
 app.use('/src', express.static('./app/src'));
 
 app.get('/', (req, res) => {
   res.sendFile(path.resolve('app', 'index.html'));
 });
 
-app.listen(3333, () => {
-  console.log('listen port 3333');
+app.listen(port, () => {
+  console.log(`listen port ${port}`);
 });
