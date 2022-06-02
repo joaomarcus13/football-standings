@@ -19,6 +19,6 @@ and run
 
 `npm start`
 
-demo 
+### Demo 
 
 [https://football-standings-jm.herokuapp.com/](https://football-standings-jm.herokuapp.com/)
