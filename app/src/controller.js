@@ -10,7 +10,6 @@ export default class AppController {
   }
 
   initialize() {
-    this.apiManager.connect();
     this.viewManager.configureSideNav(this.changeLeague.bind(this));
     this.viewManager.configureNavMatchday(this.changeMatchday.bind(this));
     this._build();
