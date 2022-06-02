@@ -18,3 +18,7 @@ install NPM dependencies
 and run
 
 `npm start`
+
+demo 
+
+[https://football-standings-jm.herokuapp.com/](https://football-standings-jm.herokuapp.com/)
