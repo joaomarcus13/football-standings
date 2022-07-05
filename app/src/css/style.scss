@@ -74,6 +74,8 @@ main {
 
   table {
     border-collapse: collapse;
+    position: relative;
+    width: 100%;
     thead tr {
       th {
         position: sticky;
