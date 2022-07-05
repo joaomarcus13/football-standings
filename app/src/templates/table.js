@@ -1,14 +1,14 @@
 const getRow = (item) => {
   return `<tr><td> <div>${item.position}</div>  <span>-</span>  <img src=${item.team.crestUrl} alt="logoTeam" />  <div> ${item.team.name}</div></td>
                 <td><div>${item.points}</div></td>
-                <td>${item.playedGames}</td>
-                <td>${item.won}</td>
-                <td>${item.draw}</td>
-                <td>${item.lost}</td>
-                <td>${item.goalsFor}</td>
-                <td>${item.goalsAgainst}</td>
-                <td>${item.goalDifference}</td>
-                <td>${item.performance}</td>
+                <td><div>${item.playedGames}</div></td>
+                <td><div>${item.won}</div></td>
+                <td><div>${item.draw}</div></td>
+                <td><div>${item.lost}</div></td>
+                <td><div>${item.goalsFor}</div></td>
+                <td><div>${item.goalsAgainst}</div></td>
+                <td><div>${item.goalDifference}</div></td>
+                <td><div>${item.performance}</div></td>
               </tr>`;
 };
 

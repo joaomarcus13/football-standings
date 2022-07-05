@@ -9,11 +9,11 @@ export default class Service {
 
   async getStandings(id) {
     try {
-      // const resp = await this.connection.get(`/competitions/${id}/standings`);
-      // return {
-      //   currentMatchday: resp.data.season.currentMatchday,
-      //   table: resp.data.standings[0].table,
-      // };
+      const resp = await this.connection.get(`/competitions/${id}/standings`);
+      return {
+        currentMatchday: resp.data.season.currentMatchday,
+        table: resp.data.standings[0].table,
+      };
       return {
         currentMatchday: data.tableMock.currentMatchday,
         table: data.tableMock.table,
@@ -24,8 +24,8 @@ export default class Service {
   }
   async getMatches(id) {
     try {
-      // const matches = await this.connection.get(`/competitions/${id}/matches`);
-      // return matches.data.matches;
+      const matches = await this.connection.get(`/competitions/${id}/matches`);
+      return matches.data.matches;
       return data.matchMock.matches;
     } catch (error) {
       return null;

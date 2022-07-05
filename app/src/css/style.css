@@ -126,12 +126,14 @@ main section:last-of-type {
   border-radius: 4px;
 }
 #table table {
-  border-collapse: collapse;
+  border-collapse: separate !important;
+  border-spacing: 0 5px;
+  position: relative;
+  width: 100%;
 }
 #table table thead tr {
   height: 35px;
   text-transform: uppercase;
-  border-bottom: 1px solid rgb(94, 94, 94);
 }
 #table table thead tr th {
   position: -webkit-sticky;
@@ -151,7 +153,19 @@ main section:last-of-type {
 }
 #table table tbody tr {
   height: 50px;
-  border-bottom: 1px solid rgb(175, 175, 175);
+  border-radius: 4px;
+  background: linear-gradient(162deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 29%, #0d4558 100%);
+  transform: skewX(340deg);
+}
+#table table tbody tr td > div,
+#table table tbody tr td img {
+  transform: skewX(-340deg);
+}
+#table table tbody tr td + td + td {
+  color: white;
+}
+#table table tbody tr > td:nth-child(2) {
+  background-color: white;
 }
 #table table tbody tr td:first-child {
   display: flex;
@@ -181,10 +195,6 @@ main section:last-of-type {
   width: 50px;
   text-align: center;
 }
-#table table tbody tr td + td:nth-child(even) {
-  background-color: rgb(241, 247, 247);
-}
-
 #matches {
   background-color: white;
   padding: 0 20px;
@@ -215,13 +225,12 @@ main section:last-of-type {
   align-items: flex-end;
   justify-content: center;
   flex-direction: row;
-  height: 80px;
   height: 100px;
   padding: 10px;
   border-bottom: 1px solid rgb(175, 175, 175);
 }
 #matches #matcheList .matche .info {
-  width: 33.33%;
+  width: 36.33%;
   height: 100%;
   display: flex;
   align-items: center;
