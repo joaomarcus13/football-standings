@@ -12,6 +12,7 @@ export default class AppController {
   initialize() {
     this.viewManager.configureSideNav(this.changeLeague.bind(this));
     this.viewManager.configureNavMatchday(this.changeMatchday.bind(this));
+    this.viewManager.configureHeaderTable();
     this._build();
   }
 

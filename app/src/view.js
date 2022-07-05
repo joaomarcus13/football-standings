@@ -37,6 +37,20 @@ export default class ViewManager {
     });
   }
 
+  configureHeaderTable() {
+    window.addEventListener('scroll', function (_) {
+      if (window.scrollY > 36) {
+        Array.from(this.table.getElementsByTagName('th')).forEach((e) => {
+          e.classList.add('thbackground');
+        });
+      } else {
+        Array.from(this.table.getElementsByTagName('th')).forEach((e) => {
+          e.classList.remove('thbackground');
+        });
+      }
+    });
+  }
+
   configureNavMatchday(changeMatchday) {
     const checkBtnColor = (btn) => btn.classList.add('disabled');
     const removeDisabledBtn = (btn) => btn.classList.remove('disabled');

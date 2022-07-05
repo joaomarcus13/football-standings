@@ -1,6 +1,6 @@
 const getRow = (item) => {
   return `<tr><td> <div>${item.position}</div>  <span>-</span>  <img src=${item.team.crestUrl} alt="logoTeam" />  <div> ${item.team.name}</div></td>
-                <td>${item.points}</td>
+                <td><div>${item.points}</div></td>
                 <td>${item.playedGames}</td>
                 <td>${item.won}</td>
                 <td>${item.draw}</td>
